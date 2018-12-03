@@ -8,5 +8,6 @@ public class SomoonShopingApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SomoonShopingApplication.class, args);
+		
 	}
 }

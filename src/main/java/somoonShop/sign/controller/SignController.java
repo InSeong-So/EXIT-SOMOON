@@ -1,4 +1,4 @@
-package somoonShop.login.controller;
+package somoonShop.sign.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class LoginController {
+public class SignController {
 
 	@RequestMapping("/login")
 	public String loginPage() {
@@ -18,6 +18,11 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/sign")
+	public String signPage() {
+		return "/sign.html";
+	}
+	
+	@RequestMapping("/member")
 	public Map<String, Object> memberSignUp(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, Object> param = new HashMap<String, Object>();
 		
