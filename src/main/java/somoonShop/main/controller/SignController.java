@@ -1,4 +1,4 @@
-package somoonShop.sign.controller;
+package somoonShop.main.controller;
 
 import java.util.HashMap;
 import java.util.Map;
