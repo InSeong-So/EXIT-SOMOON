@@ -7,20 +7,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Table(name="shopping_basket")
 public class ShoppingBasket {
 
-	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="no")
 	private Long no;
 	
+	@Id
 	@Column(name="id")
 	private String id;
 	

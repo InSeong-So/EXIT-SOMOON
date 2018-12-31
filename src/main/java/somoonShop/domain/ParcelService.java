@@ -7,20 +7,27 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @Table(name = "parcel_service")
 public class ParcelService {
 
-	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "no")
 	private Long no;
 
+	@Id
+	@Column(name = "parcel_service_number")
+	private String parcelServiceNumber;
+	
 	@Column(name = "parcel_service_name")
 	private String parcelServiceName;
 

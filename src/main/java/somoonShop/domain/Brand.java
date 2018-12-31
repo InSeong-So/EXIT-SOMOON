@@ -20,11 +20,11 @@ import lombok.NoArgsConstructor;
 @Table(name="brand")
 public class Brand {
 	
-	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="no")
 	private Long no;
-	
+
+	@Id
 	@Column(name="brand_number")
 	private String brandNumber;
 	

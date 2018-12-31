@@ -18,9 +18,8 @@ public class SomoonShopingWorker implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-        Brand brand = Brand.builder().accountNumber("!111").bankCode(112).brandAddress("1111").brandContact("1111").brandName("test").brandNumber("!11111").brandPostalCode("111111111111").depositor("aaaa").build();
-        br.save(brand);
-        log.info("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
+//        Brand brand = Brand.builder().accountNumber("!111").bankCode(112).brandAddress("1111").brandContact("1111").brandName("test").brandNumber("!11111").brandPostalCode("111111111111").depositor("aaaa").build();
+//        br.save(brand);
 		
 	}
 }
