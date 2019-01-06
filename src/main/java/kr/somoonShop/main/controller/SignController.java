@@ -43,9 +43,8 @@ public class SignController {
 			smAccount.addAccount(accountInfo);
 		}
 
-//		System.out.println(request.getParameter("accountId"));
-//		System.out.println(request.getParameter("accountMail"));
-//		System.out.println(request.getParameter("accountPassword"));
+		result.put("accountId", request.getParameter("accountId"));
+
 		return result;
 	}
 

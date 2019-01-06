@@ -1,6 +1,5 @@
 package kr.somoonShop.domain;
 
-import java.sql.Date;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
@@ -9,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,19 +33,19 @@ public class Account {
 	@Column(name = "account_password")
 	private String accountPassword;
 
-	@Column(name = "account_name")
+	@Column(name = "account_name", nullable = true)
 	private String accountName;
 
-	@Column(name = "account_birthday")
+	@Column(name = "account_birthday", nullable = true)
 	private String accountBirthday;
 
-	@Column(name = "account_contact")
+	@Column(name = "account_contact", nullable = true)
 	private String accountContact;
 
-	@Column(name = "account_address")
+	@Column(name = "account_address", nullable = true)
 	private String accountAddress;
 
-	@Column(name = "account_postal_code")
+	@Column(name = "account_postal_code", nullable = true)
 	private String accountPostalCode;
 
 	@Column(name = "account_email")
@@ -57,7 +54,7 @@ public class Account {
 	@Column(name = "account_agreement")
 	private String accountAgreement;
 
-	@Column(name = "account_add_fit")
+	@Column(name = "account_body_size", nullable = true)
 	private String accountAddFit;
 
 	@Column(name = "account_add_Date")
