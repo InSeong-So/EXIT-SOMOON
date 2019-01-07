@@ -29,6 +29,11 @@ public interface SMAccount {
 	public Optional<Account> getAccountInfo(String accountId);
 
 	/**
+	 * 로그인 : 아이디 / 비밀번호
+	 */
+	public Account accessLogin(String accountId, String accountPassword);
+
+	/**
 	 * 마지막 로그인 시각 기록
 	 */
 	public Timestamp setLastLoginTime(String accountId);
@@ -49,7 +54,7 @@ public interface SMAccount {
 	public void clearLoginFailCount(String accountId);
 
 	/**
-	 * 인덱스로 현재 계정 리스트 호출
+	 * 인덱스로 현재 계정정보 리스트 호출
 	 */
 	public ArrayList<Account> getAccountList(String accountId);
 
