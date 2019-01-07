@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="../css/layouts/pure.css">
     <link rel="stylesheet" href="../css/layouts/marketing.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 <script type="text/javascript">
+	var loginCheck = 0;
+
 	$(document).ready(function(){
-		
+		$.ajax({
+			url : "/session",
+			dataType : "json",
+			contentType : 'application/json',
+			type : "POST"
+		}).done(function(data){
+			var data = data;
+			console.log(data);
+		});
 	});
 </script>
 <body>
@@ -22,7 +33,7 @@
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">브랜드</a></li>
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">코디</a></li>
                 <li class="pure-menu-item" style="display: none"><a href="#" class="pure-menu-link">마이페이지</a></li>
-                <li class="pure-menu-item"><a href="login" class="pure-menu-link">로그인</a></li>
+                <li class="pure-menu-item"><a href="login" class="pure-menu-link" id="loginYn">로그인</a></li>
             </ul>
         </div>
     </div>

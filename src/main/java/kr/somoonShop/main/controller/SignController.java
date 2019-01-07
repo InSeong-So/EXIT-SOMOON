@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import kr.somoonShop.service.SMAccount;
 import lombok.extern.slf4j.Slf4j;
@@ -30,18 +30,18 @@ public class SignController {
 		if (session == null) {
 			log.info("로그인 정보가 없습니다.");
 		} else {
-			log.info("로그인 되었습니다." + session.getAttribute("index"));
+			log.info("로그인 되었습니다." + session.getAttribute("account"));
 		}
 
 		return "01-home";
 	}
 
-	@RequestMapping("/session")
-	public ModelAndView sessionData(HttpServletResponse response, HttpSession session) {
-		ModelAndView mv = new ModelAndView();
-		Map<String, Object> param = (Map<String, Object>) session.getAttribute("accountNo");
-
-		return mv;
+	@RequestMapping(value = "/session", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String, Object> sessionData(HttpSession session) {
+		Map<String, Object> result = new HashMap<String, Object>();
+		result.put("account", session.getAttribute("account"));
+		return result;
 	}
 
 	@RequestMapping("/login")
@@ -54,9 +54,8 @@ public class SignController {
 		if (request.getParameter("accountId") != null && smAccount.accessLogin(request.getParameter("accountId"),
 				request.getParameter("accountPassword")) != null) {
 			log.info("환영합니다.");
-			session.setAttribute("index",
-					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword"))
-							.getAccountNo());
+			session.setAttribute("account",
+					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword")));
 		} else {
 			log.info("계정 정보가 일치하지 않거나 없는 계정입니다.");
 		}
