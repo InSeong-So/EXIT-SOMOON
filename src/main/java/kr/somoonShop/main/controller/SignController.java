@@ -55,7 +55,8 @@ public class SignController {
 				request.getParameter("accountPassword")) != null) {
 			log.info("환영합니다.");
 			session.setAttribute("account",
-					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword")));
+					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword"))
+							.getAccountName());
 		} else {
 			log.info("계정 정보가 일치하지 않거나 없는 계정입니다.");
 		}

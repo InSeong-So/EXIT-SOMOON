@@ -10,8 +10,6 @@
     <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 <script type="text/javascript">
-	var loginCheck = 0;
-
 	$(document).ready(function(){
 		$.ajax({
 			url : "/session",
@@ -19,8 +17,20 @@
 			contentType : 'application/json',
 			type : "POST"
 		}).done(function(data){
-			var data = data;
-			console.log(data);
+			if(data != null){
+				var accountId = data[Object.keys(data)]["accountId"];
+				var accountName = data[Object.keys(data)]["accountName"];
+				var accountNo = data[Object.keys(data)]["accountNo"];
+				$("#loginYn").text("로그아웃");
+			}
+		});
+		
+		$("#loginYn").click("on", function(){
+			if("#loginYn".text == "로그아웃"){
+				console.log("로그아웃 클릭");
+			} else {
+				console.log("로그인 클릭");
+			}
 		});
 	});
 </script>
