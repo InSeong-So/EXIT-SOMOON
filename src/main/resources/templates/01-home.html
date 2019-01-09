@@ -17,20 +17,23 @@
 			contentType : 'application/json',
 			type : "POST"
 		}).done(function(data){
+			var data = data[Object.keys(data)];
+			var html = "";
 			if(data != null){
-				var accountId = data[Object.keys(data)]["accountId"];
-				var accountName = data[Object.keys(data)]["accountName"];
-				var accountNo = data[Object.keys(data)]["accountNo"];
-				$("#loginYn").text("로그아웃");
-			}
-		});
-		
-		$("#loginYn").click("on", function(){
-			if("#loginYn".text == "로그아웃"){
-				console.log("로그아웃 클릭");
+				var accountId = data["accountId"];
+				var accountName = data["accountName"];
+				var accountNo = data["accountNo"];
+				html += "<li class='pure-menu-item'><a class='pure-menu-link' id='logout'>로그아웃</a></li>";
+				$(".pure-menu-list").append(html);
 			} else {
-				console.log("로그인 클릭");
+				html += "<li class='pure-menu-item'><a href='login' class='pure-menu-link' id='login'>로그인</a></li>";
+				$(".pure-menu-list").append(html);
+				$("#mypage").css("display", "none");
 			}
+			
+			$("#logout").on("click", function(){
+				$.ajax({url:"/sessionRemove"}).done(function(data){$("#mypage").css("display", "none"); location.href="/";});
+			});
 		});
 	});
 </script>
@@ -42,8 +45,7 @@
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">신상품</a></li>
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">브랜드</a></li>
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">코디</a></li>
-                <li class="pure-menu-item" style="display: none"><a href="#" class="pure-menu-link">마이페이지</a></li>
-                <li class="pure-menu-item"><a href="login" class="pure-menu-link" id="loginYn">로그인</a></li>
+                <li class="pure-menu-item" id="mypage"><a href="#" class="pure-menu-link">마이페이지</a></li>
             </ul>
         </div>
     </div>

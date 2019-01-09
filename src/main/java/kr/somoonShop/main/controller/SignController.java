@@ -27,10 +27,10 @@ public class SignController {
 	@RequestMapping("/")
 	public String mainPage(HttpSession session) {
 
-		if (session == null) {
+		if (session.getAttribute("account") == null) {
 			log.info("로그인 정보가 없습니다.");
 		} else {
-			log.info("로그인 되었습니다." + session.getAttribute("account"));
+			log.info("로그인 되었습니다. : " + session.getAttribute("account"));
 		}
 
 		return "01-home";
@@ -44,6 +44,12 @@ public class SignController {
 		return result;
 	}
 
+	@RequestMapping("/sessionRemove")
+	@ResponseBody
+	public void sessionRemove(HttpSession session) {
+		session.setAttribute("account", null);
+	}
+
 	@RequestMapping("/login")
 	public String loginPage() {
 		return "login";
@@ -55,8 +61,7 @@ public class SignController {
 				request.getParameter("accountPassword")) != null) {
 			log.info("환영합니다.");
 			session.setAttribute("account",
-					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword"))
-							.getAccountName());
+					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword")));
 		} else {
 			log.info("계정 정보가 일치하지 않거나 없는 계정입니다.");
 		}
