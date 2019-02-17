@@ -1,8 +1,7 @@
 package kr.somoonShop.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import kr.somoonShop.domain.BodySize;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BodySizeRepository extends JpaRepository<BodySize, Long> {
 

@@ -2,7 +2,6 @@ package kr.somoonShop.main.controller;
 
 import kr.somoonShop.service.SMAccount;
 import lombok.extern.slf4j.Slf4j;
-import lombok.extern.slf4j.XSlf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,89 +19,90 @@ import java.util.Map;
 @Slf4j
 public class SignController {
 
-	@Autowired
-	private SMAccount smAccount;
+    @Autowired
+    private SMAccount smAccount;
 
-	@RequestMapping("/")
-	public String mainPage(HttpSession session) {
+    @RequestMapping("/")
+    public String mainPage(HttpSession session) {
 
-		if (session.getAttribute("account") == null) {
-			log.info("로그인 정보가 없습니다.");
-		} else {
-			log.info("로그인 되었습니다. : " + session.getAttribute("account"));
-		}
+        if (session.getAttribute("account") == null) {
+            log.info("로그인 정보가 없습니다.");
+        } else {
+            log.info("로그인 되었습니다. : " + session.getAttribute("account"));
+        }
 
-		return "01-home";
-	}
+        return "01-home";
+    }
 
-	@RequestMapping(value = "/session", method = RequestMethod.POST)
-	@ResponseBody
-	public Map<String, Object> sessionData(HttpSession session) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		result.put("account", session.getAttribute("account"));
-		return result;
-	}
+    @RequestMapping(value = "/session", method = RequestMethod.POST)
+    @ResponseBody
+    public Map<String, Object> sessionData(HttpSession session) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        result.put("account", session.getAttribute("account"));
+        return result;
+    }
 
-	@RequestMapping("/sessionRemove")
-	@ResponseBody
-	public void sessionRemove(HttpSession session) {
-		session.setAttribute("account", null);
-	}
+    @RequestMapping("/sessionRemove")
+    @ResponseBody
+    public void sessionRemove(HttpSession session) {
+        session.setAttribute("account", null);
+    }
 
-	@RequestMapping("/login")
-	public String loginPage() {
-		return "login";
-	}
+    @RequestMapping("/login")
+    public String loginPage() {
+        return "login";
+    }
 
-	@PostMapping("/loginAccess")
-	public String loginAccessPage(HttpServletRequest request, HttpSession session) {
-		if (request.getParameter("accountId") != null && smAccount.accessLogin(request.getParameter("accountId"),
-				request.getParameter("accountPassword")) != null) {
-			log.info("환영합니다.");
-			session.setAttribute("account",
-					smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword")));
-		} else {
-			log.info("계정 정보가 일치하지 않거나 없는 계정입니다.");
-		}
-		return mainPage(session);
-	}
+    @PostMapping("/loginAccess")
+    public String loginAccessPage(HttpServletRequest request, HttpSession session) {
+        if (request.getParameter("accountId") != null && smAccount.accessLogin(request.getParameter("accountId"),
+                request.getParameter("accountPassword")) != null) {
+            log.info("환영합니다.");
+            session.setAttribute("account",
+                    smAccount.accessLogin(request.getParameter("accountId"), request.getParameter("accountPassword")));
+        } else {
+            log.info("계정 정보가 일치하지 않거나 없는 계정입니다.");
+        }
+        return mainPage(session);
+    }
 
-	@RequestMapping("/sign")
-	public String signPage() {
-		return "sign";
-	}
+    @RequestMapping("/sign")
+    public String signPage() {
+        return "sign";
+    }
 
-	@RequestMapping("/signup")
-	public @ResponseBody Map<String, Object> signupPage(HttpServletRequest request, HttpSession session) {
-		Map<String, Object> result = new HashMap<String, Object>();
-		String[] accountInfo = { request.getParameter("accountId"), request.getParameter("accountMail"),
-				request.getParameter("accountPassword") };
+    @RequestMapping("/signup")
+    public @ResponseBody
+    Map<String, Object> signupPage(HttpServletRequest request, HttpSession session) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        String[] accountInfo = {request.getParameter("accountId"), request.getParameter("accountMail"),
+                request.getParameter("accountPassword")};
 
-		if (smAccount.getAccountInfo(request.getParameter("accountId")).isPresent()) {
-			log.info("존재하는 값입니다.");
-		} else {
-			smAccount.addAccount(accountInfo);
-		}
+        if (smAccount.getAccountInfo(request.getParameter("accountId")).isPresent()) {
+            log.info("존재하는 값입니다.");
+        } else {
+            smAccount.addAccount(accountInfo);
+        }
 
-		session.setAttribute("accountId",
-				smAccount.getAccountInfo(request.getParameter("accountId")).get().getAccountNo());
+        session.setAttribute("accountId",
+                smAccount.getAccountInfo(request.getParameter("accountId")).get().getAccountNo());
 
-		result.put("accountId", request.getParameter("accountId"));
+        result.put("accountId", request.getParameter("accountId"));
 
-		return result;
-	}
+        return result;
+    }
 
-	@RequestMapping("/member")
-	public Map<String, Object> memberSignUp(HttpServletRequest request, HttpServletResponse response) {
-		Map<String, Object> param = new HashMap<String, Object>();
+    @RequestMapping("/member")
+    public Map<String, Object> memberSignUp(HttpServletRequest request, HttpServletResponse response) {
+        Map<String, Object> param = new HashMap<String, Object>();
 
-		return param;
+        return param;
 
-	}
+    }
 
-	@RequestMapping("/mypage")
-	public String myPage() {
-		return "mypage";
-	}
+    @RequestMapping("/mypage")
+    public String myPage() {
+        return "mypage";
+    }
 
 }

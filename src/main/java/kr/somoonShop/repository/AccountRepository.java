@@ -1,12 +1,11 @@
 package kr.somoonShop.repository;
 
-import java.util.List;
-
+import kr.somoonShop.domain.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import kr.somoonShop.domain.Account;
+import java.util.List;
 
 public interface AccountRepository extends JpaRepository<Account, String> {
 
-	public List<Account> findByAccountIdAndAccountPassword(String accountId, String accountPassword);
+    public List<Account> findByAccountIdAndAccountPassword(String accountId, String accountPassword);
 }

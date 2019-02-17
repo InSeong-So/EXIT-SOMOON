@@ -24,8 +24,10 @@ gapi._bs = new Date().getTime();
             return ca.apply(null, arguments)
         },
         da = function (a,
-            b) {
-            function c() {}
+                       b) {
+            function c() {
+            }
+
             c.prototype = b.prototype;
             a.ea = b.prototype;
             a.prototype = new c;
@@ -40,7 +42,8 @@ gapi._bs = new Date().getTime();
     var q = window,
         t = document,
         ea = q.location,
-        fa = function () {},
+        fa = function () {
+        },
         ha = /\[native code\]/,
         v = function (a, b, c) {
             return a[b] = a[b] || c
@@ -105,7 +108,8 @@ gapi._bs = new Date().getTime();
             b = new RegExp("([?#].*&|[?#])" + b + "=([^&#]*)", "g");
             if (a = a && (d.exec(a) || b.exec(a))) try {
                 c = decodeURIComponent(a[2])
-            } catch (e) {}
+            } catch (e) {
+            }
             return c
         },
         sa = new RegExp(/^/.source + /([a-zA-Z][-+.a-zA-Z0-9]*:)?/.source + /(\/\/[^\/?#]*)?/.source + /([^?#]*)?/.source + /(\?([^#]*))?/.source + /(#((#|[^#])*))?/.source + /$/.source),
@@ -199,7 +203,8 @@ gapi._bs = new Date().getTime();
             var b = Ga;
             if (!Fa()) try {
                 b()
-            } catch (c) {}
+            } catch (c) {
+            }
             Ha(a)
         },
         Ha = function (a) {
@@ -244,8 +249,8 @@ gapi._bs = new Date().getTime();
             if (0 === c) a();
             else
                 for (var d = 0, e = function () {
-                        ++d === c && a()
-                    }, f = 0; f < c; f++) b[f](e)
+                    ++d === c && a()
+                }, f = 0; f < c; f++) b[f](e)
         },
         Pa = function (a) {
             return v(v(F, "H", w()), a, w())
@@ -402,7 +407,7 @@ gapi._bs = new Date().getTime();
             a = nb();
             null !== a && b.setAttribute("nonce", a);
             b.async = "true";
-            (a = t.getElementsByTagName(kb)[0]) ? a.parentNode.insertBefore(b, a): (t.head || t.body || t.documentElement).appendChild(b)
+            (a = t.getElementsByTagName(kb)[0]) ? a.parentNode.insertBefore(b, a) : (t.head || t.body || t.documentElement).appendChild(b)
         },
         qb = function (a, b) {
             var c = b && b._c;
@@ -452,7 +457,7 @@ gapi._bs = new Date().getTime();
             } else tb(b || [], c, d)
         },
         tb = function (a, b,
-            c) {
+                       c) {
             a = ja(a) || [];
             var d = b.callback,
                 e = b.config,
@@ -561,22 +566,25 @@ gapi._bs = new Date().getTime();
         N = function (a, b, c) {
             if (b && "object" === typeof b)
                 for (var d in b) !Object.prototype.hasOwnProperty.call(b, d) || c && "___goc" === d && "undefined" === typeof b[d] || (a[d] && b[d] && "object" === typeof a[d] && "object" === typeof b[d] && !ub(a[d]) && !ub(b[d]) ? N(a[d], b[d]) : b[d] && "object" ===
-                    typeof b[d] ? (a[d] = ub(b[d]) ? [] : {}, N(a[d], b[d])) : a[d] = b[d])
+                typeof b[d] ? (a[d] = ub(b[d]) ? [] : {}, N(a[d], b[d])) : a[d] = b[d])
         },
         vb = function (a) {
             if (a && !/^\s+$/.test(a)) {
                 for (; 0 == a.charCodeAt(a.length - 1);) a = a.substring(0, a.length - 1);
                 try {
                     var b = window.JSON.parse(a)
-                } catch (c) {}
+                } catch (c) {
+                }
                 if ("object" === typeof b) return b;
                 try {
                     b = (new Function("return (" + a + "\n)"))()
-                } catch (c) {}
+                } catch (c) {
+                }
                 if ("object" === typeof b) return b;
                 try {
                     b = (new Function("return ({" + a + "\n})"))()
-                } catch (c) {}
+                } catch (c) {
+                }
                 return "object" === typeof b ? b : {}
             }
         },
@@ -585,7 +593,7 @@ gapi._bs = new Date().getTime();
                 ___goc: void 0
             };
             a.length && a[a.length - 1] && Object.hasOwnProperty.call(a[a.length -
-                1], "___goc") && "undefined" === typeof a[a.length - 1].___goc && (c = a.pop());
+            1], "___goc") && "undefined" === typeof a[a.length - 1].___goc && (c = a.pop());
             N(c, b);
             a.push(c)
         },
@@ -604,7 +612,7 @@ gapi._bs = new Date().getTime();
                 for (var h = e[g], k = 0; k < f.length; ++k) h.src && 0 == h.src.indexOf(f[k]) && d.push(h);
             0 == d.length && 0 < e.length && e[e.length - 1].src && d.push(e[e.length - 1]);
             for (e = 0; e < d.length; ++e) d[e].getAttribute("gapi_processed") ||
-                (d[e].setAttribute("gapi_processed", !0), (f = d[e]) ? (g = f.nodeType, f = 3 == g || 4 == g ? f.nodeValue : f.textContent || f.innerText || f.innerHTML || "") : f = void 0, (f = vb(f)) && b.push(f));
+            (d[e].setAttribute("gapi_processed", !0), (f = d[e]) ? (g = f.nodeType, f = 3 == g || 4 == g ? f.nodeValue : f.textContent || f.innerText || f.innerHTML || "") : f = void 0, (f = vb(f)) && b.push(f));
             a && wb(c, a);
             d = L("cd");
             a = 0;
@@ -681,7 +689,8 @@ gapi._bs = new Date().getTime();
     var Hb = function () {
             return !!F.oa
         },
-        Ib = function () {};
+        Ib = function () {
+        };
     var P = v(F, "rw", w()),
         Jb = function (a) {
             for (var b in P) a(P[b])
@@ -746,7 +755,7 @@ gapi._bs = new Date().getTime();
                 b = [];
                 var e = T(a);
                 if (null != a && "function" === typeof a.toJSON && (Object.prototype.hasOwnProperty.call(a,
-                        "toJSON") || (e !== Wb || a.constructor !== Array && a.constructor !== Object) && (e !== Vb || a.constructor !== Array && a.constructor !== Object) && e !== Ub && e !== Rb && e !== Tb && e !== Sb)) return U(a.toJSON.call(a), c);
+                    "toJSON") || (e !== Wb || a.constructor !== Array && a.constructor !== Object) && (e !== Vb || a.constructor !== Array && a.constructor !== Object) && e !== Ub && e !== Rb && e !== Tb && e !== Sb)) return U(a.toJSON.call(a), c);
                 if (null == a) b[b.length] = "null";
                 else if (e === Rb) a = Number(a), isNaN(a) || isNaN(a - a) ? a = "null" : -0 === a && 0 > 1 / a && (a = "-0"), b[b.length] = String(a);
                 else if (e === Tb) b[b.length] = String(!!Number(a));
@@ -756,7 +765,7 @@ gapi._bs = new Date().getTime();
                         b[b.length] = "[";
                         var f = 0;
                         for (d = Number(a.length) >> 0; f < d; ++f) f &&
-                            (b[b.length] = ","), b[b.length] = U(a[f], c) || "null";
+                        (b[b.length] = ","), b[b.length] = U(a[f], c) || "null";
                         b[b.length] = "]"
                     } else if (e == Ub && T(a.length) === Rb) {
                         b[b.length] = '"';
@@ -820,9 +829,11 @@ gapi._bs = new Date().getTime();
                     try {
                         R = !!m.JSON && '{"a":[3,true,"1970-01-01T00:00:00.000Z"]}' === m.JSON.stringify.call(m.JSON, {
                             a: [3, !0, new Date(0)],
-                            c: function () {}
+                            c: function () {
+                            }
                         }) && !0 === S("true") && 3 === S('[{"a":3}]')[0].a
-                    } catch (b) {}
+                    } catch (b) {
+                    }
                     Qb = R && !S("[00]") &&
                         !S('"\u0007"') && !S('"\\0"') && !S('"\\v"')
                 } finally {
@@ -919,12 +930,12 @@ gapi._bs = new Date().getTime();
                             break
                         }
                     } else
-                        for (; d < b;)
-                            if (e[f] = a[d], ++f, ++d, f == this.j) {
-                                uc(this, e);
-                                f = 0;
-                                break
-                            }
+                    for (; d < b;)
+                        if (e[f] = a[d], ++f, ++d, f == this.j) {
+                            uc(this, e);
+                            f = 0;
+                            break
+                        }
             }
             this.o = f;
             this.C += b
@@ -1041,12 +1052,13 @@ gapi._bs = new Date().getTime();
                 h = g ? Jc(d) : "";
             try {
                 document.all && (f = a.createElement('<iframe frameborder="' + pa(String(c.frameborder)) + '" scrolling="' + pa(String(c.scrolling)) + '" ' + h + ' name="' + pa(String(c.name)) + '"/>'))
-            } catch (l) {} finally {
+            } catch (l) {
+            } finally {
                 f ||
-                    (f = a.createElement("iframe"), g && (f.onload = function () {
-                        f.onload = null;
-                        g.call(this)
-                    }, Kc(d)))
+                (f = a.createElement("iframe"), g && (f.onload = function () {
+                    f.onload = null;
+                    g.call(this)
+                }, Kc(d)))
             }
             f.setAttribute("ng-non-bindable", "");
             for (var k in c) a = c[k], "style" === k && "object" === typeof a ? z(a, f.style) : Mc[k] || f.setAttribute(k, String(a));
@@ -1084,7 +1096,7 @@ gapi._bs = new Date().getTime();
         },
         Uc = function (a) {
             return function (b,
-                c) {
+                             c) {
                 return a ? Sc()[c] || a[c] || "" : Sc()[c] || ""
             }
         };
@@ -1148,7 +1160,7 @@ gapi._bs = new Date().getTime();
                     g = b.db;
                     d = O();
                     null == g && d && (g = d.db,
-                        null == g && (g = d.gwidget && d.gwidget.db));
+                    null == g && (g = d.gwidget && d.gwidget.db));
                     f.db = g || void 0;
                     g = b.ecp;
                     d = O();
@@ -1211,7 +1223,7 @@ gapi._bs = new Date().getTime();
                     if (f) {
                         var g = bd(d, b, 0);
                         g ? (f = f.parentNode,
-                            e.replace(/#.*/, "").replace(/(\?|&)ic=1/, "") !== g.replace(/#.*/, "").replace(/(\?|&)ic=1/, "") && (b.dontclear = !0, b.rd = !0, b.ri = !0, b.type = d, fd(f, b), (d = P[f.lastChild.id]) && (d.oid = c), Kb(c, 4))) : delete P[c]
+                        e.replace(/#.*/, "").replace(/(\?|&)ic=1/, "") !== g.replace(/#.*/, "").replace(/(\?|&)ic=1/, "") && (b.dontclear = !0, b.rd = !0, b.ri = !0, b.type = d, fd(f, b), (d = P[f.lastChild.id]) && (d.oid = c), Kb(c, 4))) : delete P[c]
                     } else delete P[c]
                 }
             })
@@ -1279,11 +1291,11 @@ gapi._bs = new Date().getTime();
                     for (b = a.length; u < b; u++) a[u].removeAttribute("data-gapiscan");
                     pd(y)
                 } else {
-                    d = [];
-                    for (y in c)
-                        for (a = c[y], u = 0, b = a.length; u < b; u++) e = a[u], qd(y, e, ed(e), d, b);
-                    rd(r, d)
-                }
+                d = [];
+                for (y in c)
+                    for (a = c[y], u = 0, b = a.length; u < b; u++) e = a[u], qd(y, e, ed(e), d, b);
+                rd(r, d)
+            }
         },
         sd = function (a) {
             var b = v(B, a, {});
@@ -1316,7 +1328,8 @@ gapi._bs = new Date().getTime();
         od = function () {
             return !1
         },
-        rd = function () {},
+        rd = function () {
+        },
         qd = function (a, b, c, d, e, f, g) {
             switch (wd(b, a, f)) {
                 case 0:
@@ -1409,7 +1422,7 @@ gapi._bs = new Date().getTime();
                             k = D(f);
                             l.src = "";
                             h.dropDataPostorigin ||
-                                (l["data-postorigin"] = f);
+                            (l["data-postorigin"] = f);
                             f = Pc(b, c, l, e);
                             if (-1 != navigator.userAgent.indexOf("WebKit")) {
                                 var u = f.contentWindow.document;
@@ -1460,7 +1473,7 @@ gapi._bs = new Date().getTime();
                 if (c) return 1;
                 if (X[b]) {
                     if (Ka[a.nodeName.toLowerCase()]) return (a = a.innerHTML) &&
-                        a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "") ? 0 : 1
+                    a.replace(/^[\s\xa0]+|[\s\xa0]+$/g, "") ? 0 : 1
                 } else {
                     if (hd[b]) return 0;
                     if (W[b]) return 1
@@ -1554,6 +1567,7 @@ gapi._bs = new Date().getTime();
                     })
                 }
             }
+
             if (0 !== b.length) {
                 Cd = C(ea.href, "pfname", "");
                 var e = !0;
@@ -1574,7 +1588,8 @@ gapi._bs = new Date().getTime();
                 if ("_renderstart" === d.s || d.s === Cd + "/" + a + "::_renderstart")
                     if (d = d.a && d.a[c ? 0 : 1], b = t.getElementById(a), Kb(a, 2), d && b && d.width && d.height) {
                         a: {
-                            c = b.parentNode;a = d || {};
+                            c = b.parentNode;
+                            a = d || {};
                             if (Hb()) {
                                 var e = b.id;
                                 if (e) {
@@ -1582,10 +1597,33 @@ gapi._bs = new Date().getTime();
                                     if (1 === d || 4 === d) break a;
                                     zd(e)
                                 }
-                            }(d = c.nextSibling) && d.getAttribute && d.getAttribute("data-gapistub") && (c.parentNode.removeChild(d), c.style.cssText = "");d = a.width;
+                            }
+                            (d = c.nextSibling) && d.getAttribute && d.getAttribute("data-gapistub") && (c.parentNode.removeChild(d), c.style.cssText = "");
+                            d = a.width;
                             var f = a.height,
-                                g = c.style;g.textIndent = "0";g.margin = "0";g.padding = "0";g.background = "transparent";g.borderStyle =
-                            "none";g.cssFloat = "none";g.styleFloat = "none";g.lineHeight = "normal";g.fontSize = "1px";g.verticalAlign = "baseline";c = c.style;c.display = "inline-block";g = b.style;g.position = "static";g.left = "0";g.top = "0";g.visibility = "visible";d && (c.width = g.width = d + "px");f && (c.height = g.height = f + "px");a.verticalAlign && (c.verticalAlign = a.verticalAlign);e && Kb(e, 3)
+                                g = c.style;
+                            g.textIndent = "0";
+                            g.margin = "0";
+                            g.padding = "0";
+                            g.background = "transparent";
+                            g.borderStyle =
+                                "none";
+                            g.cssFloat = "none";
+                            g.styleFloat = "none";
+                            g.lineHeight = "normal";
+                            g.fontSize = "1px";
+                            g.verticalAlign = "baseline";
+                            c = c.style;
+                            c.display = "inline-block";
+                            g = b.style;
+                            g.position = "static";
+                            g.left = "0";
+                            g.top = "0";
+                            g.visibility = "visible";
+                            d && (c.width = g.width = d + "px");
+                            f && (c.height = g.height = f + "px");
+                            a.verticalAlign && (c.verticalAlign = a.verticalAlign);
+                            e && Kb(e, 3)
                         }
                         b["data-csi-wdt"] = (new Date).getTime()
                     }
@@ -1757,7 +1795,7 @@ gapi._bs = new Date().getTime();
     Z.prototype.S = function () {
         this.G && (this.M() ? this.v = this.K : this.v = Math.min(2 * (this.v || this.K), 120), window.setTimeout(ca(this.S, this), 1E3 * this.v))
     };
-    for (var Sd = 0; 64 > Sd; ++Sd);
+    for (var Sd = 0; 64 > Sd; ++Sd) ;
     var Td = null;
     Hb = function () {
         return F.oa = !0

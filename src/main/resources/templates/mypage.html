@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title> Title </title>
     <script src="../js/jquery-3.3.1.min.js"></script>
 </head>
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $.ajax({
             url: "/session",
             dataType: "json",
@@ -45,67 +45,67 @@
 </style>
 
 <body>
-    <!--
-   비밀번호, 비밀번호 재입력 accountPassword, accountPassowrd2
-   이름 accountName
-   생년월일 accountBirthday
-   연락처 accountContact
-   ┌ 주소 accountAddress + 상세주소 accountAddress2
-   └ 우편번호 accountPostalCode
-   이메일 accountEmail
-   개인정보동의현황 : 체크박스 accountAgreement
-   성별(회원사이즈에서 받아올 것) accountSex
-   회원 사이즈 : accountBodySize
-       - 키 bodysize
-       - 가슴 둘레
-       - 허리 둘레
-       - 엉덩이 둘레
-       - 상체 길이
-       - 하체 길이
+<!--
+비밀번호, 비밀번호 재입력 accountPassword, accountPassowrd2
+이름 accountName
+생년월일 accountBirthday
+연락처 accountContact
+┌ 주소 accountAddress + 상세주소 accountAddress2
+└ 우편번호 accountPostalCode
+이메일 accountEmail
+개인정보동의현황 : 체크박스 accountAgreement
+성별(회원사이즈에서 받아올 것) accountSex
+회원 사이즈 : accountBodySize
+   - 키 bodysize
+   - 가슴 둘레
+   - 허리 둘레
+   - 엉덩이 둘레
+   - 상체 길이
+   - 하체 길이
 -->
+<div>
     <div>
         <div>
-            <div>
-                <h2>개인정보수정</h2>
-                <hr id="colorgraph">
-                <form>
-                    <div>
-                        <input type="text" name="accountName" id="accountName" placeholder="이름">
-                    </div>
-                    <div>
-                        <input type="text" name="accountContact" id="accountContact" placeholder="연락처">
-                    </div>
-                    <div>
-                        <input type="text" name="accountBirthday" id="accountBirthday" placeholder="생년월일">
-                    </div>
-                    <div>
-                        <input type="text" name="accountAddress" id="accountAddress" placeholder="주소">
-                        <input type="text" name="accountAddress2" id="accountAddress2" placeholder="상세 주소">
-                        <input type="text" name="accountPostalCode" id="accountPostalCode" placeholder="우편번호">
-                    </div>
-                    <div>
-                        <input type="email" name="accountEmail" id="accountEmail" placeholder="이메일">
-                    </div>
-                    <div>
-                        <input type="password" name="accountPassword" id="accountPassword" placeholder="변경할 비밀번호">
-                    </div>
-                    <div>
-                        <input type="password" name="accountPassowrd2" id="accountPassowrd2" placeholder="변경할 비밀번호 재입력">
-                    </div>
-                    <div>
+            <h2>개인정보수정</h2>
+            <hr id="colorgraph">
+            <form>
+                <div>
+                    <input id="accountName" name="accountName" placeholder="이름" type="text">
+                </div>
+                <div>
+                    <input id="accountContact" name="accountContact" placeholder="연락처" type="text">
+                </div>
+                <div>
+                    <input id="accountBirthday" name="accountBirthday" placeholder="생년월일" type="text">
+                </div>
+                <div>
+                    <input id="accountAddress" name="accountAddress" placeholder="주소" type="text">
+                    <input id="accountAddress2" name="accountAddress2" placeholder="상세 주소" type="text">
+                    <input id="accountPostalCode" name="accountPostalCode" placeholder="우편번호" type="text">
+                </div>
+                <div>
+                    <input id="accountEmail" name="accountEmail" placeholder="이메일" type="email">
+                </div>
+                <div>
+                    <input id="accountPassword" name="accountPassword" placeholder="변경할 비밀번호" type="password">
+                </div>
+                <div>
+                    <input id="accountPassowrd2" name="accountPassowrd2" placeholder="변경할 비밀번호 재입력" type="password">
+                </div>
+                <div>
                         <span>
                                 <button type="button">개인정보 동의현황</button>
-                                <input type="checkbox" id="accountAgreement">
+                                <input id="accountAgreement" type="checkbox">
                             </span>
-                    </div>
+                </div>
 
-                    <hr id="colorgraph">
-                    <div><input type="submit" value="변경사항 저장"></div>
-                </form>
-                <a href="/">돌아가기</a>
-            </div>
+                <hr id="colorgraph">
+                <div><input type="submit" value="변경사항 저장"></div>
+            </form>
+            <a href="/">돌아가기</a>
         </div>
     </div>
+</div>
 </body>
 
 </html>

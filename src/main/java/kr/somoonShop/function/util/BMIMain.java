@@ -1,15 +1,10 @@
 package kr.somoonShop.function.util;
-import java.io.IOException;
-
-import kr.somoonShop.function.util.ClothesSize;
-import kr.somoonShop.function.util.Input;
-import kr.somoonShop.function.util.urlSite;
 
 public class BMIMain {
-	
-		public int bmi(int a, int b) {
-			return ( a / ( b * b ) * 10000);
-		}
+
+    public int bmi(int a, int b) {
+        return (a / (b * b) * 10000);
+    }
 //		//선언
 //		ClothesSize si = new ClothesSize();
 //	    urlSite te = new urlSite();

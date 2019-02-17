@@ -1,15 +1,15 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A layout example that shows off a responsive product landing page.">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="A layout example that shows off a responsive product landing page." name="description">
     <title>SoMoonShop &ndash; Proto &ndash; Home</title>
     <!--
     <link rel="stylesheet" href="css/layouts/pure.css">
     <link rel="stylesheet" href="css/layouts/marketing.css">
 -->
-    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 </head>
 
 <style>
@@ -62,7 +62,6 @@
     .is-center {
         text-align: center;
     }
-
 
 
     /*
@@ -281,6 +280,7 @@
         .home-menu {
             text-align: left;
         }
+
         .home-menu ul {
             float: right;
         }
@@ -575,8 +575,8 @@
         align-content: flex-start
     }
 
-    @media all and (-ms-high-contrast:none),
-    (-ms-high-contrast:active) {
+    @media all and (-ms-high-contrast: none),
+    (-ms-high-contrast: active) {
         table .pure-g {
             display: block
         }
@@ -829,7 +829,7 @@
     .pure-button-active,
     .pure-button:active {
         box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
-        border-color: #000\9
+        border-color: #000 \9
     }
 
     .pure-button-disabled,
@@ -1163,10 +1163,11 @@
         font-size: .875em
     }
 
-    @media only screen and (max-width:480px) {
+    @media only screen and (max-width: 480px) {
         .pure-form button[type=submit] {
             margin: .7em 0 0
         }
+
         .pure-form input:not([type]),
         .pure-form input[type=password],
         .pure-form input[type=email],
@@ -1186,6 +1187,7 @@
             margin-bottom: .3em;
             display: block
         }
+
         .pure-group input:not([type]),
         .pure-group input[type=password],
         .pure-group input[type=email],
@@ -1203,15 +1205,18 @@
         .pure-group input[type=text] {
             margin-bottom: 0
         }
+
         .pure-form-aligned .pure-control-group label {
             margin-bottom: .3em;
             text-align: left;
             display: block;
             width: 100%
         }
+
         .pure-form-aligned .pure-controls {
             margin: 1.5em 0 0
         }
+
         .pure-form .pure-help-inline,
         .pure-form-message,
         .pure-form-message-inline {
@@ -1289,19 +1294,19 @@
         width: inherit
     }
 
-    .pure-menu-active>.pure-menu-children,
-    .pure-menu-allow-hover:hover>.pure-menu-children {
+    .pure-menu-active > .pure-menu-children,
+    .pure-menu-allow-hover:hover > .pure-menu-children {
         display: block;
         position: absolute
     }
 
-    .pure-menu-has-children>.pure-menu-link:after {
+    .pure-menu-has-children > .pure-menu-link:after {
         padding-left: .5em;
         content: "\25B8";
         font-size: small
     }
 
-    .pure-menu-horizontal .pure-menu-has-children>.pure-menu-link:after {
+    .pure-menu-horizontal .pure-menu-has-children > .pure-menu-link:after {
         content: "\25BE"
     }
 
@@ -1376,7 +1381,7 @@
         background-color: transparent
     }
 
-    .pure-menu-active>.pure-menu-link,
+    .pure-menu-active > .pure-menu-link,
     .pure-menu-link:focus,
     .pure-menu-link:hover {
         background-color: #eee
@@ -1434,7 +1439,7 @@
         border-bottom: 1px solid #cbcbcb
     }
 
-    .pure-table-bordered tbody>tr:last-child>td {
+    .pure-table-bordered tbody > tr:last-child > td {
         border-bottom-width: 0
     }
 
@@ -1444,134 +1449,139 @@
         border-bottom: 1px solid #cbcbcb
     }
 
-    .pure-table-horizontal tbody>tr:last-child>td {
+    .pure-table-horizontal tbody > tr:last-child > td {
         border-bottom-width: 0
     }
 
 </style>
 
 <body>
-    <div>
-        <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
-            <a class="pure-menu-heading" href="">Your Site</a>
-            <ul class="pure-menu-list">
-                <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Tour</a></li>
-                <li class="pure-menu-item"><a href="sign.html" class="pure-menu-link">Sign Up</a></li>
-            </ul>
-        </div>
+<div>
+    <div class="home-menu pure-menu pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="">Your Site</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item pure-menu-selected"><a class="pure-menu-link" href="#">Home</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link" href="#">Tour</a></li>
+            <li class="pure-menu-item"><a class="pure-menu-link" href="sign.html">Sign Up</a></li>
+        </ul>
     </div>
+</div>
 
-    <div class="splash-container">
-        <div class="splash">
-            <h1 class="splash-head">Big Bold Text</h1>
-            <p class="splash-subhead">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            </p>
-            <p>
-                <a href="http://purecss.io" class="pure-button pure-button-primary">Get Started</a>
-            </p>
-        </div>
+<div class="splash-container">
+    <div class="splash">
+        <h1 class="splash-head">Big Bold Text</h1>
+        <p class="splash-subhead">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        </p>
+        <p>
+            <a class="pure-button pure-button-primary" href="http://purecss.io">Get Started</a>
+        </p>
     </div>
+</div>
 
-    <div class="content-wrapper">
-        <div class="content">
-            <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
+<div class="content-wrapper">
+    <div class="content">
+        <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
 
-            <div class="pure-g">
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+        <div class="pure-g">
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
 
-                    <h3 class="content-subhead">
-                        <i class="fa fa-rocket"></i> Get Started Quickly
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <h3 class="content-subhead">
-                        <i class="fa fa-mobile"></i> Responsive Layouts
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <h3 class="content-subhead">
-                        <i class="fa fa-th-large"></i> Modular
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-                <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                    <h3 class="content-subhead">
-                        <i class="fa fa-check-square-o"></i> Plays Nice
-                    </h3>
-                    <p>
-                        Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="ribbon l-box-lrg pure-g">
-            <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-                <img width="300" alt="File Icons" class="pure-img-responsive" src="img/common/file-icons.png">
-            </div>
-            <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
-
-                <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
-
+                <h3 class="content-subhead">
+                    <i class="fa fa-rocket"></i> Get Started Quickly
+                </h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor.
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-mobile"></i> Responsive Layouts
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-th-large"></i> Modular
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                <h3 class="content-subhead">
+                    <i class="fa fa-check-square-o"></i> Plays Nice
+                </h3>
+                <p>
+                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ribbon l-box-lrg pure-g">
+        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+            <img alt="File Icons" class="pure-img-responsive" src="img/common/file-icons.png" width="300">
+        </div>
+        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor.
+            </p>
+        </div>
+    </div>
+
+    <div class="content">
+        <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+        <div class="pure-g">
+            <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+
+                        <label for="name">Your Name</label>
+                        <input id="name" placeholder="Your Name" type="text">
+
+
+                        <label for="email">Your Email</label>
+                        <input id="email" placeholder="Your Email" type="email">
+
+                        <label for="password">Your Password</label>
+                        <input id="password" placeholder="Your Password" type="password">
+
+                        <button class="pure-button" type="submit">Sign Up</button>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                <h4>Contact Us</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.
+                </p>
+
+                <h4>More Information</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.
                 </p>
             </div>
         </div>
 
-        <div class="content">
-            <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
-
-            <div class="pure-g">
-                <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
-                    <form class="pure-form pure-form-stacked">
-                        <fieldset>
-
-                            <label for="name">Your Name</label>
-                            <input id="name" type="text" placeholder="Your Name">
-
-
-                            <label for="email">Your Email</label>
-                            <input id="email" type="email" placeholder="Your Email">
-
-                            <label for="password">Your Password</label>
-                            <input id="password" type="password" placeholder="Your Password">
-
-                            <button type="submit" class="pure-button">Sign Up</button>
-                        </fieldset>
-                    </form>
-                </div>
-
-                <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                    <h4>Contact Us</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-
-                    <h4>More Information</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer l-box is-center">
-            View the source of this layout to learn more. Made with love by the YUI Team.
-        </div>
-
     </div>
+
+    <div class="footer l-box is-center">
+        View the source of this layout to learn more. Made with love by the YUI Team.
+    </div>
+
+</div>
 </body>
 
 </html>

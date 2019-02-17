@@ -251,8 +251,8 @@ legend {
     align-content: flex-start
 }
 
-@media all and (-ms-high-contrast:none),
-(-ms-high-contrast:active) {
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
     table .pure-g {
         display: block
     }
@@ -505,7 +505,7 @@ legend {
 .pure-button-active,
 .pure-button:active {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
-    border-color: #000\9
+    border-color: #000 \9
 }
 
 .pure-button-disabled,
@@ -839,10 +839,11 @@ a.pure-button-selected {
     font-size: .875em
 }
 
-@media only screen and (max-width:480px) {
+@media only screen and (max-width: 480px) {
     .pure-form button[type=submit] {
         margin: .7em 0 0
     }
+
     .pure-form input:not([type]),
     .pure-form input[type=password],
     .pure-form input[type=email],
@@ -862,6 +863,7 @@ a.pure-button-selected {
         margin-bottom: .3em;
         display: block
     }
+
     .pure-group input:not([type]),
     .pure-group input[type=password],
     .pure-group input[type=email],
@@ -879,15 +881,18 @@ a.pure-button-selected {
     .pure-group input[type=text] {
         margin-bottom: 0
     }
+
     .pure-form-aligned .pure-control-group label {
         margin-bottom: .3em;
         text-align: left;
         display: block;
         width: 100%
     }
+
     .pure-form-aligned .pure-controls {
         margin: 1.5em 0 0
     }
+
     .pure-form .pure-help-inline,
     .pure-form-message,
     .pure-form-message-inline {
@@ -1056,7 +1061,7 @@ a.pure-button-selected {
 .pure-menu-link:focus,
 .pure-menu-link:hover {
     background-color: #eee;
-    cursor : pointer;
+    cursor: pointer;
 }
 
 .pure-menu-selected .pure-menu-link,
