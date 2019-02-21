@@ -1,4 +1,4 @@
-package kr.somoonShop.datasource;
+package kr.somoonShop.webservice.config;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -18,12 +18,12 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManager", basePackages = "kr.somoonShop.repository")
+@EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory", transactionManagerRef = "transactionManager", basePackages = "kr.somoonShop.webservice.repository")
 public class SoMoonShopDataSource {
 
     @Primary
     @Bean(name = "dataSource")
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "spring.config")
     public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
@@ -32,7 +32,7 @@ public class SoMoonShopDataSource {
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(EntityManagerFactoryBuilder builder,
                                                                        @Qualifier("dataSource") DataSource dataSource) {
-        return builder.dataSource(dataSource).packages("kr.somoonShop.domain").build();
+        return builder.dataSource(dataSource).packages("kr.somoonShop.webservice.domain").build();
     }
 
     @Primary

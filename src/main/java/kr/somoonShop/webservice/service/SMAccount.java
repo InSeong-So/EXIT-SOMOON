@@ -1,6 +1,6 @@
-package kr.somoonShop.service;
+package kr.somoonShop.webservice.service;
 
-import kr.somoonShop.domain.Account;
+import kr.somoonShop.webservice.domain.account.Account;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;

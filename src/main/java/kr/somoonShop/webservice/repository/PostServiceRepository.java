@@ -1,6 +1,6 @@
-package kr.somoonShop.repository;
+package kr.somoonShop.webservice.repository;
 
-import kr.somoonShop.domain.PostService;
+import kr.somoonShop.webservice.domain.PostService;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PostServiceRepository extends JpaRepository<PostService, Long> {

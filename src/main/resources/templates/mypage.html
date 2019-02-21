@@ -13,7 +13,6 @@
             dataType: "json",
             contentType: 'application/json',
             type: "POST"
-<<<<<<< HEAD
         }).done(function (d) {
             var data = d[Object.keys(d)];
             console.log(data);
@@ -26,16 +25,6 @@
                 // document.getElementById("accountEmail").value = data["accountEmail"];
             } else {
                 console.log("데이터가 없습니다.");
-=======
-        }).done(function (data) {
-            var data = data[Object.keys(data)];
-            var html = "";
-            if (data != null) {
-                document.getElementById("accountName").value = data["accountName"];
-            } else {
-                console.log("데이터가 없습니다.");
-                alert("e")
->>>>>>> origin/master
             }
         });
     });
@@ -46,7 +35,6 @@
         margin: 0;
         padding: 0;
     }
-<<<<<<< HEAD
     .form1{
         margin-bottom: 15px;
     }
@@ -62,21 +50,6 @@
         text-align: center;
     }
 </style>
-=======
-
-    #colorgraph {
-        height: 5px;
-        border-top: 0;
-        background: #c4e17f;
-        border-radius: 5px;
-        background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-        background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-    }
-</style>
-
->>>>>>> origin/master
 <body>
 <!--
 비밀번호, 비밀번호 재입력 accountPassword, accountPassowrd2
@@ -100,7 +73,6 @@
     <div>
         <div>
             <h2>개인정보수정</h2>
-<<<<<<< HEAD
             <form action="/accountSet" method="post">
                 <div class="form1">
                     <div class="in">이름</div>
@@ -146,16 +118,16 @@
                         <div id="point"></div>
                         <url>
                             <li>
-                                포인트 적립을 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                                포인트 적립을 위한 개인정보 제3자 제공동의 <input id="accountAgreement1" type="checkbox">
                             </li>
                             <li>
-                                포인트 자동조회를 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                                포인트 자동조회를 위한 개인정보 제3자 제공동의 <input id="accountAgreement2" type="checkbox">
                             </li>
                             <li>
-                                마케팅 활용을 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                                마케팅 활용을 위한 개인정보 제3자 제공동의 <input id="accountAgreement3" type="checkbox">
                             </li>
                             <li>
-                                개인 맞춤형 혜택, 정보 제공을 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                                개인 맞춤형 혜택, 정보 제공을 위한 개인정보 제3자 제공동의 <input id="accountAgreement4" type="checkbox">
                             </li>
                         </url>
                     </span>
@@ -167,44 +139,6 @@
                     <a href="">취소</a>
                 </div>
             </form>
-=======
-            <hr id="colorgraph">
-            <form>
-                <div>
-                    <input id="accountName" name="accountName" placeholder="이름" type="text">
-                </div>
-                <div>
-                    <input id="accountContact" name="accountContact" placeholder="연락처" type="text">
-                </div>
-                <div>
-                    <input id="accountBirthday" name="accountBirthday" placeholder="생년월일" type="text">
-                </div>
-                <div>
-                    <input id="accountAddress" name="accountAddress" placeholder="주소" type="text">
-                    <input id="accountAddress2" name="accountAddress2" placeholder="상세 주소" type="text">
-                    <input id="accountPostalCode" name="accountPostalCode" placeholder="우편번호" type="text">
-                </div>
-                <div>
-                    <input id="accountEmail" name="accountEmail" placeholder="이메일" type="email">
-                </div>
-                <div>
-                    <input id="accountPassword" name="accountPassword" placeholder="변경할 비밀번호" type="password">
-                </div>
-                <div>
-                    <input id="accountPassowrd2" name="accountPassowrd2" placeholder="변경할 비밀번호 재입력" type="password">
-                </div>
-                <div>
-                        <span>
-                                <button type="button">개인정보 동의현황</button>
-                                <input id="accountAgreement" type="checkbox">
-                            </span>
-                </div>
-
-                <hr id="colorgraph">
-                <div><input type="submit" value="변경사항 저장"></div>
-            </form>
-            <a href="/">돌아가기</a>
->>>>>>> origin/master
         </div>
     </div>
 </div>

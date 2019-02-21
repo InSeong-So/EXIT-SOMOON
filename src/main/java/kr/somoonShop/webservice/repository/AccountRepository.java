@@ -1,6 +1,6 @@
-package kr.somoonShop.repository;
+package kr.somoonShop.webservice.repository;
 
-import kr.somoonShop.domain.Account;
+import kr.somoonShop.webservice.domain.account.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package kr.somoonShop.domain;
+package kr.somoonShop.webservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

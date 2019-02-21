@@ -1,7 +1,7 @@
-package kr.somoonShop.service;
+package kr.somoonShop.webservice.service;
 
-import kr.somoonShop.domain.Account;
-import kr.somoonShop.repository.AccountRepository;
+import kr.somoonShop.webservice.domain.account.Account;
+import kr.somoonShop.webservice.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
@@ -91,15 +91,27 @@ public class SMAccountImplements implements SMAccount {
 
     @Override
     public void addAccount(String[] accountBasicAdd) {
-        account = Account.builder().accountId(accountBasicAdd[0]).accountEmail(accountBasicAdd[1])
-                .accountPassword(accountBasicAdd[2]).accountAddDate(nowTime).accountName(accountBasicAdd[0]).build();
+        account = Account.builder()
+                .accountId(accountBasicAdd[0])
+                .accountEmail(accountBasicAdd[1])
+                .accountPassword(accountBasicAdd[2])
+                .accountAddDate(nowTime)
+                .accountName(accountBasicAdd[0])
+                .build();
         accountRepository.save(account);
         log.info("기본정보로 회원가입 완료");
     }
 
     @Override
     public void setAccount(String[] accountModify) {
-        account = Account.builder().accountName(accountModify[0]).accountContact(accountModify[1]).accountBirthday(accountModify[2]).accountAddress(accountModify[3]).accountPostalCode(accountModify[4]).accountPassword(accountModify[5]).build();
+        account = Account.builder()
+                .accountName(accountModify[0])
+                .accountContact(accountModify[1])
+                .accountBirthday(accountModify[2])
+                .accountAddress(accountModify[3])
+                .accountPostalCode(accountModify[4])
+                .accountPassword(accountModify[5])
+                .build();
         accountRepository.save(account);
         log.info("계정정보 변경 완료");
     }
