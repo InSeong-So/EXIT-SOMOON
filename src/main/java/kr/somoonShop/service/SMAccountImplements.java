@@ -90,23 +90,22 @@ public class SMAccountImplements implements SMAccount {
     }
 
     @Override
-    public void setAccount(Account accountInfo) {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
     public void addAccount(String[] accountBasicAdd) {
         account = Account.builder().accountId(accountBasicAdd[0]).accountEmail(accountBasicAdd[1])
-                .accountPassword(accountBasicAdd[2]).accountAddDate(nowTime).build();
+                .accountPassword(accountBasicAdd[2]).accountAddDate(nowTime).accountName(accountBasicAdd[0]).build();
         accountRepository.save(account);
         log.info("기본정보로 회원가입 완료");
     }
 
     @Override
-    public void delAccount(ArrayList<Integer> accountNoList) {
-        // TODO Auto-generated method stub
-
+    public void setAccount(String[] accountModify) {
+        account = Account.builder().accountName(accountModify[0]).accountContact(accountModify[1]).accountBirthday(accountModify[2]).accountAddress(accountModify[3]).accountPostalCode(accountModify[4]).accountPassword(accountModify[5]).build();
+        accountRepository.save(account);
+        log.info("계정정보 변경 완료");
     }
 
+    @Override
+    public void delAccount(ArrayList<Integer> accountNoList) {
+
+    }
 }

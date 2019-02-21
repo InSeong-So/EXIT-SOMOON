@@ -61,7 +61,7 @@ public interface SMAccount {
     /**
      * 계정 정보 변경
      */
-    public void setAccount(Account accountInfo);
+    public void setAccount(String[] accountModify);
 
     /**
      * 새로운 계정 추가

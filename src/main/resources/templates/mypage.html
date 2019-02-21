@@ -13,6 +13,20 @@
             dataType: "json",
             contentType: 'application/json',
             type: "POST"
+<<<<<<< HEAD
+        }).done(function (d) {
+            var data = d[Object.keys(d)];
+            console.log(data);
+            var html = "";
+            if (data != null) {
+                document.getElementById("point").value=data["accountName"] + "환영합니다.";
+                // document.getElementById("accountName").value = data["accountName"];
+                // document.getElementById("accountContact").value = data["accountContact"];
+                // document.getElementById("accountBirthday").value = data["accountBirthday"];
+                // document.getElementById("accountEmail").value = data["accountEmail"];
+            } else {
+                console.log("데이터가 없습니다.");
+=======
         }).done(function (data) {
             var data = data[Object.keys(data)];
             var html = "";
@@ -21,6 +35,7 @@
             } else {
                 console.log("데이터가 없습니다.");
                 alert("e")
+>>>>>>> origin/master
             }
         });
     });
@@ -31,6 +46,23 @@
         margin: 0;
         padding: 0;
     }
+<<<<<<< HEAD
+    .form1{
+        margin-bottom: 15px;
+    }
+    .in{
+        text-align: center;
+        width: 100px;
+        float: left;
+    }
+    .in2{
+        width: 100px;
+        margin-bottom: 10px;
+        float: left;
+        text-align: center;
+    }
+</style>
+=======
 
     #colorgraph {
         height: 5px;
@@ -44,6 +76,7 @@
     }
 </style>
 
+>>>>>>> origin/master
 <body>
 <!--
 비밀번호, 비밀번호 재입력 accountPassword, accountPassowrd2
@@ -67,6 +100,74 @@
     <div>
         <div>
             <h2>개인정보수정</h2>
+<<<<<<< HEAD
+            <form action="/accountSet" method="post">
+                <div class="form1">
+                    <div class="in">이름</div>
+                    <button> 변경 </button>
+                    <!-- <input id="accountName" name="accountName" placeholder="이름" type="text"> -->
+                </div>
+                <div class="form1">
+                    <div class="in">아이디</div>
+                    <input id="accountId" name="accountId" type="text" value="accountId" disabled>
+                </div>
+                <div class="form1">
+                    <div class="in">비밀번호</div>
+                    <button> 변경 </button>
+                    <!-- <input id="accountPassword" name="accountPassword" placeholder="변경할 비밀번호" type="password"> -->
+                </div>
+                <div class="form1">
+                    <div class="in">생년월일</div>
+                    <button> 변경 </button>
+                    <!-- <input id="accountBirthday" name="accountBirthday" placeholder="생년월일" type="text"> -->
+                </div>
+                <div>
+                    <div style="width: 100px; text-align: center">연락처</div>
+                    <br>
+                    <div>
+                        <div class="in2">전화번호</div>
+                        <button class="button1">변경</button>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="in2">이메일</div><button class="button1">변경</button>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="in2">주소</div><button class="button1">변경</button>
+                    </div>
+                    <!-- <input id="accountContact" name="accountContact" placeholder="연락처" type="text">
+                    <input id="accountEmail" name="accountEmail" placeholder="이메일" type="email" disabled> -->
+                </div>
+
+                <br>
+                <div class="form2">
+                    <span>
+                        <div id="point"></div>
+                        <url>
+                            <li>
+                                포인트 적립을 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                            </li>
+                            <li>
+                                포인트 자동조회를 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                            </li>
+                            <li>
+                                마케팅 활용을 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                            </li>
+                            <li>
+                                개인 맞춤형 혜택, 정보 제공을 위한 개인정보 제3자 제공동의 <input id="accountAgreement" type="checkbox">
+                            </li>
+                        </url>
+                    </span>
+                </div>
+
+                <br>
+                <div>
+                    <input type="submit" value="확인">
+                    <a href="">취소</a>
+                </div>
+            </form>
+=======
             <hr id="colorgraph">
             <form>
                 <div>
@@ -103,6 +204,7 @@
                 <div><input type="submit" value="변경사항 저장"></div>
             </form>
             <a href="/">돌아가기</a>
+>>>>>>> origin/master
         </div>
     </div>
 </div>

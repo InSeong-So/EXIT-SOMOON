@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta content="profile email" name="google-signin-scope">
+<<<<<<< HEAD
+    <meta content="305653103206-ejfm39933getg3tf0ju57bh6iqiokouf.apps.googleaccountcontent.com"
+          name="google-signin-client_id">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="account-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+=======
     <meta content="305653103206-ejfm39933getg3tf0ju57bh6iqiokouf.apps.googleusercontent.com"
           name="google-signin-client_id">
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <meta content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, width=device-width"
+>>>>>>> origin/master
           name="viewport"/>
     <script async defer src="https://apis.google.com/js/platform.js"></script>
     <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
     <title>Insert title here</title>
 </head>
 <script type="text/javascript">
+<<<<<<< HEAD
+    function onSignIn(googleaccount) {
+        // Useful data for your client-side scripts:
+        var profile = googleaccount.getBasicProfile();
+=======
     function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
+>>>>>>> origin/master
         console.log("ID: " + profile.getId()); // Don't send this directly to your server!
         console.log('Full Name: ' + profile.getName());
         console.log('Given Name: ' + profile.getGivenName());
@@ -24,10 +37,16 @@
         console.log("Email: " + profile.getEmail());
 
         // The ID token you need to pass to your backend:
+<<<<<<< HEAD
+        var id_token = googleaccount.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+    }
+=======
         var id_token = googleUser.getAuthResponse().id_token;
         console.log("ID Token: " + id_token);
     };
 
+>>>>>>> origin/master
     //<![CDATA[
     // 사용할 앱의 JavaScript 키를 설정해 주세요.
     Kakao.init('2cc5266e13649f7a9cc381d82da2a2c9');
@@ -42,8 +61,96 @@
                 alert(JSON.stringify(err));
             }
         });
+<<<<<<< HEAD
+    }
+    //]]>
+    document.ready(function(){
+        $("#accountName").focus(function(){
+            var data = $("#accountId").val();
+            if(data == null || data == ""){
+                alert("아이디를 입력해주세요.");
+                return false;
+            }
+            var d = {"accountId" : data};
+            $.ajax({
+                url : "/accountCheck",
+                data : d
+            }).done(function(data){
+                var d = JSON.parse(data);
+                if(d.result == 0){
+                    alert("사용하실 수 있는 아이디입니다.");
+                    $("#accountEmail").focus();
+                } else {
+                    alert("중복된 아이디입니다. 다시 입력해주세요.");
+                    $("#accountId").val("");
+                    $("#accountId").focus();
+                }
+            });
+        });
+        $("#inputPassword").focus(function(){
+            $("#accountPassword2").focus(function(){
+                var regPassword = /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,}$/;
+                if( !$("#accountPassword").val() ){
+                    alert("비밀번호를 입력하세요");
+                    return false;
+                } else {
+                    if(!regPassword.test($("#accountPassword").val())) {
+                        alert("비밀번호 형식이 유효하지 않습니다");
+                        return false;
+                    }
+                }            		
+            });
+        });
+        $("#signup_submit").on("click",function(){
+            if($("#accountPassword").val() != $("#accountPassword2").val()){
+                alert("비밀번호가 일치하지 않습니다. 다시 입력해주세요.");
+                $("#accountPassword2").val("");
+                $("#accountPassword2").focus();
+                return false;
+            } else {
+                // $(".help-block").eq(1).css("color", "blue");
+                // $(".help-block").eq(1).text("비밀번호 확인되었습니다.")
+                alert("비밀번호가 확인되었습니다.");
+            }
+        });
+        $("form").submit(function(){
+            var accountId = $("#accountId").val(); 
+            var accountPassword = $("#accountPassword").val();
+            var accountPassword2 = $("#accountPassword2").val();
+            var accountName = $("#accountName").val();
+            var accountEmail = $("#accountEmail").val();
+            // var accountEmailCheck = $("#inputEmailCheck").val();
+            if(accountId != "" && accountPassword != "" && accountPasswordCheck != "" && accountName != "" && accountNumb != "" && accountEmail != "" ){
+                var d = {
+                        "accountId" : accountId,
+                        "accountPassword" : accountPassword,
+                        "accountName" : accountName,
+                        "accountNumb" : accountNumb,
+                        "accountEmail" : accountEmail
+                };
+                $.ajax({
+                    url: "/account/insert",
+                    data: d
+                }).done(function(data){
+                    var d = JSON.parse(data);
+                    console.log(d);
+                    if(d.result == 1){
+                        alert("회원가입이 완료되었습니다. 로그인 해 주세요.");
+                    } else if(d.result == 0){
+                        alert("중복된 아이디입니다.");
+                    } else {
+                        alert("다시 시도해주세요.")
+                    }
+                });
+            } else {
+                alert("회원가입 항목을 작성해주세요.");
+            }
+        });
+    });
+=======
     };
     //]]>
+>>>>>>> origin/master
 </script>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
@@ -66,7 +173,11 @@
         position: relative;
         margin: 5% auto;
         width: 600px;
+<<<<<<< HEAD
+        height: 440px;
+=======
         height: 400px;
+>>>>>>> origin/master
         background: #FFF;
         border-radius: 2px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -216,11 +327,20 @@
 <div id="login-box">
     <div class="left">
         <h1>회원 정보 입력</h1>
+<<<<<<< HEAD
+        <form>
+            <input name="accountId" placeholder="아이디" type="text"/>
+            <input name="accountName" placeholder="이름" type="text"/>
+            <input name="accountMail" placeholder="이메일" type="text"/>
+            <input name="accountPassword" placeholder="비밀번호" type="password"/>
+            <input name="accountPassword2" placeholder="비밀번호 확인" type="password"/>
+=======
         <form action="/signup" method="post">
             <input name="accountId" placeholder="아이디" type="text"/>
             <input name="accountMail" placeholder="이메일" type="text"/>
             <input name="accountPassword" placeholder="비밀번호" type="password"/>
             <input name="accountPassword2" placeholder="비밀번호 재입력" type="password"/>
+>>>>>>> origin/master
             <input name="signup_submit" type="submit" value="회원 가입"/>
         </form>
     </div>
@@ -228,7 +348,11 @@
     <div class="right">
         <!--            <span class="loginwith">Sign in with<br />social network</span>-->
         <span class="loginwith">소셜 로그인</span>
+<<<<<<< HEAD
+        <button class="social-signin kakao" onclick="loginWithKakao()">Log in with KAKAO</button>
+=======
         <button class="social-signin kakao" onclick="javascript:loginWithKakao()">Log in with KAKAO</button>
+>>>>>>> origin/master
         <!--            <button class="social-signin facebook">Log in with facebook</button>-->
         <!--            <button class="social-signin google" data-onsuccess="onSignIn">Log in with Google+</button>-->
         <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
