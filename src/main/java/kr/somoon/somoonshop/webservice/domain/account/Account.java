@@ -1,63 +1,35 @@
 package kr.somoon.somoonshop.webservice.domain.account;
 
+import kr.somoon.somoonshop.webservice.domain.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
-@Entity
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-@Table(name = "account")
-public class Account {
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "account_no")
-    private Long accountNo;
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+public class Account extends BaseTimeEntity {
 
     @Id
-    @Column(name = "account_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long no;
+
+    @Column(columnDefinition = "TEXT", nullable = false)
     private String accountId;
 
-    @Column(name = "account_password")
+    @Column(nullable = false)
     private String accountPassword;
 
-    @Column(name = "account_name", nullable = true)
+    @Column(nullable = false)
     private String accountName;
 
-    @Column(name = "account_birthday", nullable = true)
-    private String accountBirthday;
-
-    @Column(name = "account_contact", nullable = true)
-    private String accountContact;
-
-    @Column(name = "account_address", nullable = true)
-    private String accountAddress;
-
-    @Column(name = "account_postal_code", nullable = true)
-    private String accountPostalCode;
-
-    @Column(name = "account_email")
-    private String accountEmail;
-
-    @Column(name = "account_agreement")
-    private String accountAgreement;
-
-    @Column(name = "account_body_size", nullable = true)
-    private String accountAddFit;
-
-    @Column(name = "account_add_Date")
-    private Timestamp accountAddDate;
-
-    @Column(name = "account_last_login")
-    private Timestamp accountLastLogin;
-
-    @Column(name = "account_count_login_failed")
-    private int accountCountLoginFailed;
-
-    @Column(name = "account_point")
-    private int accountPoint;
+    @Builder
+    public Account(String accountId, String accountPassword, String accountName){
+        this.accountId = accountId;
+        this.accountPassword = accountPassword;
+        this.accountName = accountName;
+    }
 
 }
