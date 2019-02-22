@@ -1,4 +1,4 @@
-package kr.somoonShop.webservice.service;
+package kr.somoon.somoonshop.webservice.service;
 
 import kr.somoonShop.webservice.domain.account.Account;
 import kr.somoonShop.webservice.repository.AccountRepository;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class SMAccountImplements implements SMAccount {
+public class SMAccountImplements implements kr.somoonShop.webservice.service.SMAccount {
 
     @Autowired
     private AccountRepository accountRepository;
