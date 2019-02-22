@@ -1,7 +1,7 @@
 package kr.somoon.somoonshop.webservice.service;
 
-import kr.somoonShop.webservice.domain.account.Account;
-import kr.somoonShop.webservice.repository.AccountRepository;
+import kr.somoon.somoonshop.webservice.domain.account.Account;
+import kr.somoon.somoonshop.webservice.repository.AccountRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Service
 @Slf4j
-public class SMAccountImplements implements kr.somoonShop.webservice.service.SMAccount {
+public class SMAccountImplements implements kr.somoon.somoonshop.webservice.service.SMAccount {
 
     @Autowired
     private AccountRepository accountRepository;

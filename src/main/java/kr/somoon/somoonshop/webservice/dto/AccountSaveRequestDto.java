@@ -1,6 +1,6 @@
-package kr.somoonShop.webservice.dto;
+package kr.somoon.somoonshop.webservice.dto;
 
-import kr.somoonShop.webservice.domain.account.Account;
+import kr.somoon.somoonshop.webservice.domain.account.Account;
 import lombok.*;
 
 import javax.persistence.Column;

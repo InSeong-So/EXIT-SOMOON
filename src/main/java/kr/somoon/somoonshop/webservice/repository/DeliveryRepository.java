@@ -1,6 +1,6 @@
-package kr.somoonShop.webservice.repository;
+package kr.somoon.somoonshop.webservice.repository;
 
-import kr.somoonShop.webservice.domain.Delivery;
+import kr.somoon.somoonshop.webservice.domain.Delivery;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DeliveryRepository extends JpaRepository<Delivery, Long> {

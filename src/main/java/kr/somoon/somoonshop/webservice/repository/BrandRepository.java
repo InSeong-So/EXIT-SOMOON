@@ -1,6 +1,6 @@
-package kr.somoonShop.webservice.repository;
+package kr.somoon.somoonshop.webservice.repository;
 
-import kr.somoonShop.webservice.domain.Brand;
+import kr.somoon.somoonshop.webservice.domain.Brand;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BrandRepository extends JpaRepository<Brand, Long> {
