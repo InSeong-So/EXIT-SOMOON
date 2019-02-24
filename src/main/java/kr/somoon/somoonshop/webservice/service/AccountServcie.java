@@ -4,6 +4,7 @@ import kr.somoon.somoonshop.webservice.domain.account.Account;
 import kr.somoon.somoonshop.webservice.domain.account.AccountRepository;
 import kr.somoon.somoonshop.webservice.dto.AccountMainResponseDto;
 import kr.somoon.somoonshop.webservice.dto.AccountSaveRequestDto;
+import kr.somoon.somoonshop.webservice.exepction.UnAuthenticationException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,7 +32,7 @@ public class AccountServcie {
                 .collect(Collectors.toList());
     }
 
-    public Account login(String accountId, String accountPassword){
+    public Account login(String accountId, String accountPassword) throws UnAuthenticationException {
         Optional<Account> user = accountRepository.findByAccountId(accountId);
         if(!user.isPresent())
             throw new IllegalStateException();
