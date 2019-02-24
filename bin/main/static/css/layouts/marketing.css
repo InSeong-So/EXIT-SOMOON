@@ -159,7 +159,7 @@ a.pure-button-primary {
     text-transform: uppercase;
 }
 
-/* This is the main heading that appears on the blue section */
+/* This is the accountList heading that appears on the blue section */
 .splash-head {
     font-size: 20px;
     font-weight: bold;
@@ -198,7 +198,7 @@ a.pure-button-primary {
     padding: 1em 1em 3em;
 }
 
-/* This is the class used for the main content headers (<h2>) */
+/* This is the class used for the accountList content headers (<h2>) */
 .content-head {
     font-weight: 400;
     text-transform: uppercase;

@@ -18,7 +18,7 @@ public class WebController {
     @Autowired
     private AccountServcie accountServcie;
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String home(){
         return "home";
     }

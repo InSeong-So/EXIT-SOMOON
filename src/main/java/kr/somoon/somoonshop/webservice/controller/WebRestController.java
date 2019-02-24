@@ -23,7 +23,7 @@ public class WebRestController {
         return "Hello!";
     }
 
-    @PostMapping("/account")
+    @PostMapping("/restAccount")
     public Long saveAccount(@RequestBody AccountSaveRequestDto dto){
         return accountServcie.save(dto);
     }

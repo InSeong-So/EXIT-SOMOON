@@ -24,6 +24,16 @@ public class AccountController {
     @Autowired
     private AccountRepository accountRepository;
 
+    @GetMapping("/resistration")
+    public String resistration(){
+        return "/account/resistration";
+    }
+
+    @GetMapping("/profile")
+    public String profile(){
+        return "/account/profile";
+    }
+
     @PostMapping("")
     public String create(Account account){
         log.debug("Account Create : {}", account);

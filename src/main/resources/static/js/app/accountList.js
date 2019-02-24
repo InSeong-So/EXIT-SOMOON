@@ -1,3 +1,13 @@
+String.prototype.format = function(){
+    var args = arguments;
+    return this.replace(/{(\d+)}/g, function (match, number) {
+        return typeof args[number] != 'underfined'
+            ? args[number]
+            : match
+            ;
+    });
+};
+
 var accountList = {
     init: function () {
         var _this = this;
