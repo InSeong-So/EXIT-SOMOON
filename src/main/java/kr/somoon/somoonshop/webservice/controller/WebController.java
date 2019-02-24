@@ -19,12 +19,17 @@ public class WebController {
     @GetMapping("/")
     public String accountList(Model model){
         model.addAttribute("account", accountServcie.findAllDesc());
-        return "accountList";
+        return "/account/accountList";
     }
 
     @GetMapping("/home")
     public String home(){
         return "home";
+    }
+
+    @GetMapping("/resistration")
+    public String resistration(){
+        return "/account/resistration";
     }
 
     @PostMapping("/login")

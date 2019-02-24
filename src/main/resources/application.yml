@@ -21,6 +21,12 @@ spring:
       enabled: true
 
 ---
+
+handlebars:
+  suffix: .html
+  cache: false
+
+
 #spring.profiles: set1
 #
 #spring:
