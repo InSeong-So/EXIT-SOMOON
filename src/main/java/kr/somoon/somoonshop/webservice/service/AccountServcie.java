@@ -6,6 +6,7 @@ import kr.somoon.somoonshop.webservice.dto.AccountMainResponseDto;
 import kr.somoon.somoonshop.webservice.dto.AccountSaveRequestDto;
 import kr.somoon.somoonshop.webservice.exepction.UnAuthenticationException;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 @Service
 public class AccountServcie {
 
+    @Autowired
     private AccountRepository accountRepository;
 
     @Transactional
@@ -38,7 +40,7 @@ public class AccountServcie {
             throw new IllegalStateException();
 
         Account account = user.get();
-        if(!account.checkPassword(accountPassword))
+        if(!account.matchPassword(accountPassword))
             throw new IllegalStateException();
         return account;
     }

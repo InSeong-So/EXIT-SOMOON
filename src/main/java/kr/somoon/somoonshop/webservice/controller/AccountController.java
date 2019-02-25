@@ -41,7 +41,7 @@ public class AccountController {
         return "redirect:/account";
     }
 
-    @GetMapping("")
+    @GetMapping("/list")
     public String accountList(Model model){
         log.debug("Account Size : {}", accountServcie.findAllDesc());
         model.addAttribute("account", accountServcie.findAllDesc());

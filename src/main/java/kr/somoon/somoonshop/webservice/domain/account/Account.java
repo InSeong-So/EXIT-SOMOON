@@ -32,7 +32,15 @@ public class Account extends BaseTimeEntity {
         this.accountName = accountName;
     }
 
-    public boolean checkPassword(String accountPassword){
+    public void update(Account target){
+
+        if(!matchPassword(accountPassword))
+            return;
+
+        this.accountName = target.accountName;
+    }
+
+    public boolean matchPassword(String accountPassword){
         return this.accountPassword.equals(accountPassword);
     }
 
