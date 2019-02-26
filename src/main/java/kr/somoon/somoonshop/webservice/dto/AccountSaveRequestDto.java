@@ -1,13 +1,9 @@
 package kr.somoon.somoonshop.webservice.dto;
 
 import kr.somoon.somoonshop.webservice.domain.account.Account;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 public class AccountSaveRequestDto {
 

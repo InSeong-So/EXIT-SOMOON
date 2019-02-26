@@ -1,6 +1,7 @@
 package kr.somoon.somoonshop.webservice.domain.account;
 
 import kr.somoon.somoonshop.webservice.domain.BaseTimeEntity;
+import kr.somoon.somoonshop.webservice.exepction.UnAuthorizedException;
 import lombok.*;
 
 import javax.persistence.*;
@@ -10,11 +11,13 @@ import java.util.List;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
+@ToString
 public class Account extends BaseTimeEntity {
+    public static final GuestAccount GUEST_ACCOUNT = new GuestAccount();
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long no;
+    private long no;
 
     @Column(unique = true, length = 20, nullable = false)
     private String accountId;
@@ -32,7 +35,10 @@ public class Account extends BaseTimeEntity {
         this.accountName = accountName;
     }
 
-    public void update(Account target){
+    public void update(Account loginAccount, Account target){
+
+        if(!matchId(loginAccount.getAccountId()))
+            throw new UnAuthorizedException();
 
         if(!matchPassword(accountPassword))
             return;
@@ -40,8 +46,23 @@ public class Account extends BaseTimeEntity {
         this.accountName = target.accountName;
     }
 
+    public boolean matchId(String accountId){
+        return this.accountId.equals(accountId);
+    }
+
     public boolean matchPassword(String accountPassword){
         return this.accountPassword.equals(accountPassword);
+    }
+
+    public boolean isGuestAccount(){
+        return false;
+    }
+
+    private static class GuestAccount extends Account{
+        @Override
+        public boolean isGuestAccount() {
+            return true;
+        }
     }
 
     @Override
@@ -84,13 +105,4 @@ public class Account extends BaseTimeEntity {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Account{" +
-                "no=" + no +
-                ", accountId='" + accountId + '\'' +
-                ", accountPassword='" + accountPassword + '\'' +
-                ", accountName='" + accountName + '\'' +
-                '}';
-    }
 }

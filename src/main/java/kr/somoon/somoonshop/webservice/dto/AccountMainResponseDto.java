@@ -16,6 +16,7 @@ public class AccountMainResponseDto {
     private String createdDate;
     private String modifiedDate;
 
+
     public AccountMainResponseDto(Account entry){
         no = entry.getNo();
         id = entry.getAccountId();
