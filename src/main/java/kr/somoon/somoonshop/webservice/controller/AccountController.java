@@ -24,9 +24,9 @@ public class AccountController {
     @Autowired
     private AccountRepository accountRepository;
 
-    @GetMapping("/resistration")
-    public String resistration(){
-        return "/account/resistration";
+    @GetMapping("/registration")
+    public String registration(){
+        return "/account/registration";
     }
 
     @GetMapping("/profile")

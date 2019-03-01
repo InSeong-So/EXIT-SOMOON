@@ -1,6 +1,5 @@
 package kr.somoon.somoonshop.webservice.controller;
 
-import kr.somoon.somoonshop.webservice.security.HttpSessionUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

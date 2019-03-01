@@ -1,4 +1,4 @@
-package kr.somoon.somoonshop.webservice.dto;
+package kr.somoon.somoonshop.webservice.dto.Account;
 
 import kr.somoon.somoonshop.webservice.domain.account.Account;
 import lombok.Getter;
@@ -16,14 +16,13 @@ public class AccountMainResponseDto {
     private String createdDate;
     private String modifiedDate;
 
-
     public AccountMainResponseDto(Account entry){
-        no = entry.getNo();
-        id = entry.getAccountId();
-        password = entry.getAccountPassword();
-        name = entry.getAccountName();
-        createdDate = toStringDateTime(entry.getCreatedDate());
-        modifiedDate = toStringDateTime(entry.getModifiedDate());
+        this.no = entry.getNo();
+        this.id = entry.getAccountId();
+        this.password = entry.getAccountPassword();
+        this.name = entry.getAccountName();
+        this.createdDate = toStringDateTime(entry.getCreatedDate());
+        this.modifiedDate = toStringDateTime(entry.getModifiedDate());
     }
 
     private String toStringDateTime(LocalDateTime localDateTime){

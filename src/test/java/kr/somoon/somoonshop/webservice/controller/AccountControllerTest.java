@@ -19,7 +19,7 @@ public class AccountControllerTest extends OriginAuthAcceptanceTest {
 
     @Test
     public void createResistration() throws Exception{
-        ResponseEntity<String> response = template.getForEntity("/account/resistration", String.class);
+        ResponseEntity<String> response = template.getForEntity("/account/registration", String.class);
         Assert.assertThat(response.getStatusCode(), CoreMatchers.is(HttpStatus.OK));
         log.debug("body : {}", response.getBody());
     }

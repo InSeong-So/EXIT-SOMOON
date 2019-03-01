@@ -1,4 +1,4 @@
-package kr.somoon.somoonshop.webservice.dto;
+package kr.somoon.somoonshop.webservice.dto.Account;
 
 import kr.somoon.somoonshop.webservice.domain.account.Account;
 import lombok.*;

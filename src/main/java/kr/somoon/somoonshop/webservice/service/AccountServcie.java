@@ -2,14 +2,13 @@ package kr.somoon.somoonshop.webservice.service;
 
 import kr.somoon.somoonshop.webservice.domain.account.Account;
 import kr.somoon.somoonshop.webservice.domain.account.AccountRepository;
-import kr.somoon.somoonshop.webservice.dto.AccountMainResponseDto;
-import kr.somoon.somoonshop.webservice.dto.AccountSaveRequestDto;
+import kr.somoon.somoonshop.webservice.dto.Account.AccountMainResponseDto;
+import kr.somoon.somoonshop.webservice.dto.Account.AccountSaveRequestDto;
 import kr.somoon.somoonshop.webservice.exepction.UnAuthenticationException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;

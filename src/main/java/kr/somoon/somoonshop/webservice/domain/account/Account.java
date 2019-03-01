@@ -35,6 +35,13 @@ public class Account extends BaseTimeEntity {
         this.accountName = accountName;
     }
 
+    public Account(long no, String accountId, String accountPassword, String accountName){
+        this.no = no;
+        this.accountId = accountId;
+        this.accountPassword = accountPassword;
+        this.accountName = accountName;
+    }
+
     public void update(Account loginAccount, Account target){
 
         if(!matchId(loginAccount.getAccountId()))

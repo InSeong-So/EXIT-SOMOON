@@ -1,6 +1,6 @@
 package kr.somoon.somoonshop.webservice.controller;
 
-import kr.somoon.somoonshop.webservice.dto.AccountSaveRequestDto;
+import kr.somoon.somoonshop.webservice.dto.Account.AccountSaveRequestDto;
 import kr.somoon.somoonshop.webservice.service.AccountServcie;
 import lombok.AllArgsConstructor;
 import org.springframework.core.env.Environment;
