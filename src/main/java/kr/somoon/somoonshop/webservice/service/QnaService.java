@@ -23,24 +23,24 @@ public class QnaService {
         questionRepository.save(question);
     }
 
-    public Question findByNo(long no){
-        return questionRepository.findOne(no);
-    }
+//    public Question findByNo(long no){
+//        return questionRepository.findOne(no);
+//    }
 
-    public Question update(Account loginAccount, long no, Question updateQuestion){
-        Question question = questionRepository.findOne(no);
-        question.update(loginAccount, updateQuestion);
-        return questionRepository.save(question);
-    }
+//    public Question update(Account loginAccount, long no, Question updateQuestion){
+//        Question question = questionRepository.findOne(no);
+//        question.update(loginAccount, updateQuestion);
+//        return questionRepository.save(question);
+//    }
 
     public List<Question> findAll(){
         return questionRepository.findAll();
     }
 
-    public Question addAnwer(Account loginAccount, long questionNo, String contents){
-        Question question = questionRepository.findOne(questionNo);
-        Answer answer = new Answer(loginAccount, contents);
-        question.addAnswer(answer);
-        return questionRepository.save(question);
-    }
+//    public Question addAnwer(Account loginAccount, long questionNo, String contents){
+//        Question question = questionRepository.findOne(questionNo);
+//        Answer answer = new Answer(loginAccount, contents);
+//        question.addAnswer(answer);
+//        return questionRepository.save(question);
+//    }
 }
