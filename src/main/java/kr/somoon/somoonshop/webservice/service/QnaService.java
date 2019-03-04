@@ -23,9 +23,9 @@ public class QnaService {
         questionRepository.save(question);
     }
 
-//    public Question findByNo(long no){
-//        return questionRepository.findOne(no);
-//    }
+    public Question findByNo(long no){
+        return questionRepository.findOne(no);
+    }
 
 //    public Question update(Account loginAccount, long no, Question updateQuestion){
 //        Question question = questionRepository.findOne(no);

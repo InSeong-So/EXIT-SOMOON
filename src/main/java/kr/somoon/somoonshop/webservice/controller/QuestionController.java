@@ -13,20 +13,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Slf4j
 @Controller
-@RequestMapping("/qna")
-public class QnaController {
+@RequestMapping("/questions")
+public class QuestionController {
 
     @Autowired
     private QuestionRepository questionRepository;
 
     @GetMapping("/list")
     public String questionList(){
-        return "/qna/list";
+        return "/question/list";
     }
 
     @GetMapping("/question")
     public String question(@LoginAccount Account loginAccount){
-        return "/qna/question";
+        return "/question/question";
     }
 
     @PostMapping("")
