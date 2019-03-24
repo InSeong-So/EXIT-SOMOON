@@ -9,6 +9,8 @@
       <module name="com.somoon.somoonShoping.test" target="1.8" />
       <module name="kr.somoon.somoon-shop.main" target="1.8" />
       <module name="kr.somoon.somoon-shop.test" target="1.8" />
+      <module name="somoon-shop.main" target="1.8" />
+      <module name="somoon-shop.test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

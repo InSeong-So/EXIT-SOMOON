@@ -19,7 +19,7 @@ public class AnswerController {
 
     @PostMapping("")
     public String create(@LoginAccount Account loginAccount, @PathVariable long questionAccount, String contents){
-        Question question = qnaService.addAnswer(loginAccount, questionAccount, contents);
+        Question question = qnaService.addAnwer(loginAccount, questionAccount, contents);
         return "redirect:" + question;
     }
 }
