@@ -1,24 +1,25 @@
 package kr.somoon.somoonshop.webservice.domain.qna;
 
-import kr.somoon.somoonshop.webservice.domain.BaseTimeEntity;
+import kr.somoon.somoonshop.webservice.domain.ParentEntity;
+import kr.somoon.somoonshop.webservice.domain.UrlGeneratable;
 import kr.somoon.somoonshop.webservice.domain.account.Account;
 import kr.somoon.somoonshop.webservice.exepction.UnAuthorizedException;
-import lombok.*;
+import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-@Getter
-@Setter
+//@Getter
+//@Setter
+@Data
 @ToString
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Question extends BaseTimeEntity {
+//@NoArgsConstructor(access = AccessLevel.PROTECTED)
+public class Question extends ParentEntity implements UrlGeneratable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long no;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private long no;
 
     @Column(nullable = false, length = 100)
     private String title;
@@ -30,18 +31,30 @@ public class Question extends BaseTimeEntity {
     @JoinColumn(foreignKey = @ForeignKey(name = "fk_question_writer"))
     private Account writer;
 
-    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
-    @OrderBy("no ASC")
-    private List<Answer> answers = new ArrayList<>();
+//    @OneToMany(mappedBy = "question", cascade = CascadeType.ALL)
+//    @OrderBy("no ASC")
+//    private List<Answer> answers = new ArrayList<>();
+
+    @Embedded
+    private Answers answers = new Answers();
+
+    public Question(){
+
+    }
 
     public Question(String title, String contents){
         this.title = title;
         this.contents = contents;
     }
 
-    public void addAnswer(Answer answer){
+    public Answer addAnswer(Answer answer){
+        answer.toQuestion(this);
         answers.add(answer);
-        answer.setQuestion(this);
+        return answer;
+    }
+
+    public void writeBy(Account loginAccount){
+        this.writer = loginAccount;
     }
 
     public boolean isOwner(Account loginAccount){
@@ -57,4 +70,8 @@ public class Question extends BaseTimeEntity {
         this.contents = contents;
     }
 
+    @Override
+    public String generateUrl() {
+        return String.format("/question/%d", getId());
+    }
 }

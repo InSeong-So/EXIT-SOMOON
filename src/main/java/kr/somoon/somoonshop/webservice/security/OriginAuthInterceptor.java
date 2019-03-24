@@ -22,23 +22,21 @@ public class OriginAuthInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String authorization = request.getHeader("Authorization");
         log.debug("Authorization : {}", authorization);
-        if(authorization == null || !authorization.startsWith("Origin")){
+        if(authorization == null || !authorization.startsWith("Basic"))
             return true;
-        }
 
-        String base64Credentials = authorization.substring("Origin".length()).trim();
+        String base64Credentials = authorization.substring("Basic".length()).trim();
         String credentials = new String(Base64.getDecoder().decode(base64Credentials), Charset.forName("UTF-8"));
-        final  String[] values = credentials.split(":", 2);
-        log.debug("accountName : {}", values[0]);
-        log.debug("accountPassword : {}", values[1]);
+        final String[] values = credentials.split(":", 2);
+        log.debug("account name : {}", values[0]);
+        log.debug("account password : {}", values[1]);
 
-        try {
+        try{
             Account account = accountServcie.login(values[0], values[1]);
             log.debug("Login Success : {}", account);
             request.getSession().setAttribute(HttpSessionUtils.ACCOUNT_SESSION_KEY, account);
             return true;
-
-        } catch (UnAuthenticationException e) {
+        }catch (UnAuthenticationException e){
             return true;
         }
     }
